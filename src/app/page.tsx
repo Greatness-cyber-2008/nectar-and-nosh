@@ -12,7 +12,9 @@ const CATEGORY_EMOJI: Record<string, string> = {
   milkshakes: "🍫",
   snacks: "🍿",
   meals: "🍛",
+  bowls: "🥣",
 };
+
 
 export default function HomePage() {
   return (

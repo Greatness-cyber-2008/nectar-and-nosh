@@ -3,7 +3,8 @@ export type MenuCategory =
   | "juices"
   | "milkshakes"
   | "snacks"
-  | "meals";
+  | "meals"
+  | "bowls";
 
 export interface MenuItem {
   id: string;
@@ -27,6 +28,7 @@ export const CATEGORIES: CategoryInfo[] = [
   { key: "milkshakes", label: "Milkshakes", tagline: "Creamy, thick, irresistible", color: "green" },
   { key: "snacks", label: "Snacks", tagline: "Tasty bites for every craving", color: "orange" },
   { key: "meals", label: "Meals", tagline: "Made fresh, served with love", color: "pink" },
+  { key: "bowls", label: "Fresh Bowls", tagline: "Light, wholesome, made for you", color: "green" },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -56,6 +58,14 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: "sn-doughnut", category: "snacks", name: "Doughnut", description: "Soft & sweet", price: 700, emoji: "🍩" },
   { id: "sn-popcorn", category: "snacks", name: "Popcorn", description: "Perfectly popped", price: 1000, emoji: "🍿" },
   { id: "sn-fries", category: "snacks", name: "French Fries", description: "Crispy golden fries", price: 2000, emoji: "🍟" },
+     
+// New Menu Alert additions
+  { id: "ju-green", category: "juices", name: "Green Juice", description: "350ml, fresh & wholesome greens", price: 2500, emoji: "🥬" },
+  { id: "ju-ginger", category: "juices", name: "Ginger Shot", description: "60ml, a fiery wellness kick", price: 1500, emoji: "🫚" },
+  { id: "ju-zobo", category: "juices", name: "Zobo", description: "500ml, chilled hibiscus refresher", price: 1000, emoji: "🍷" },
+  { id: "mk-chocshake", category: "milkshakes", name: "Chocolate Shake", description: "500ml, rich & indulgent", price: 3500, emoji: "🍫" },
+  { id: "bw-parfait", category: "bowls", name: "Parfait", description: "Medium cup — granola, yogurt & berries", price: 3000, emoji: "🍓" },
+  { id: "bw-fruitsalad", category: "bowls", name: "Fruit Salad", description: "Medium bowl of fresh mixed fruit", price: 2500, emoji: "🍉" },
 
   // Meals (no fixed price — see WhatsApp)
   { id: "ml-daily", category: "meals", name: "Daily Meal Menu", description: "Delicious & satisfying meals, made fresh — check today's options on WhatsApp", price: null, emoji: "🍛" },
