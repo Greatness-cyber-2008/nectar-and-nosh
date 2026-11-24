@@ -1,0 +1,14 @@
+# Query: item.emoji
+# ContextLines: 1
+
+2 results - 2 files
+
+src\components\cart\cart-context.tsx:
+  65          ...prev,
+  66:         { id: item.id, name: item.name, price: item.price!, emoji: item.emoji, qty: 1 },
+  67        ];
+
+src\components\menu\menu-card.tsx:
+  29        <div className="flex items-start justify-between gap-3">
+  30:       <ItemImage id={item.id} emoji={item.emoji} name={item.name} />
+  31          {!isMeal && (

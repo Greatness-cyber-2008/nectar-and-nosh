@@ -1,5 +1,6 @@
 "use client";
 
+import { ItemImage } from "@/components/ItemImage";
 import { motion } from "framer-motion";
 import { Plus, MessageCircle } from "lucide-react";
 import { MenuItem, formatNaira, BRAND } from "@/lib/menu-data";
@@ -11,6 +12,8 @@ const ACCENTS: Record<string, string> = {
   milkshakes: "border-green-500",
   snacks: "border-orange-400",
   meals: "border-pink-400",
+  bowls: "border-green-500",
+  extras: "border-orange-400",
 };
 
 export function MenuCard({ item, index }: { item: MenuItem; index: number }) {
@@ -26,7 +29,7 @@ export function MenuCard({ item, index }: { item: MenuItem; index: number }) {
       className={`relative bg-white rounded-3xl p-5 shadow-card border-t-4 ${ACCENTS[item.category]} flex flex-col gap-3`}
     >
       <div className="flex items-start justify-between gap-3">
-        <span className="text-4xl leading-none">{item.emoji}</span>
+        <ItemImage id={item.id} emoji={item.emoji} name={item.name} />
         {!isMeal && (
           <span className="font-display font-extrabold text-lg text-choc whitespace-nowrap">
             {formatNaira(item.price!)}

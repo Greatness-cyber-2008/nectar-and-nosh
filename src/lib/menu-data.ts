@@ -4,6 +4,7 @@ export type MenuCategory =
   | "milkshakes"
   | "snacks"
   | "meals"
+  | "extras"
   | "bowls";
 
 export interface MenuItem {
@@ -27,48 +28,69 @@ export const CATEGORIES: CategoryInfo[] = [
   { key: "juices", label: "Fresh Juices", tagline: "Pure, natural, refreshing", color: "orange" },
   { key: "milkshakes", label: "Milkshakes", tagline: "Creamy, thick, irresistible", color: "green" },
   { key: "snacks", label: "Snacks", tagline: "Tasty bites for every craving", color: "orange" },
-  { key: "meals", label: "Meals", tagline: "Made fresh, served with love", color: "pink" },
+  { key: "meals", label: "Food Menu", tagline: "Made fresh, served with love", color: "pink" },
+  { key: "extras", label: "Extras", tagline: "Add a little more", color: "orange" },
   { key: "bowls", label: "Fresh Bowls", tagline: "Light, wholesome, made for you", color: "green" },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
-  // Smoothies
-  { id: "sm-mango", category: "smoothies", name: "Mango Smoothie", description: "Tropical mangoes blended smooth", price: 3000, emoji: "🥭" },
-  { id: "sm-strawberry", category: "smoothies", name: "Strawberry Smoothie", description: "Sweet strawberries blended to perfection", price: 3500, emoji: "🍓" },
-  { id: "sm-banana", category: "smoothies", name: "Banana Smoothie", description: "Creamy bananas for natural energy", price: 2500, emoji: "🍌" },
-  { id: "sm-mixed", category: "smoothies", name: "Mixed Fruit Smoothie", description: "A delicious mix of seasonal fruits", price: 3500, emoji: "🍇" },
-  { id: "sm-pineapple", category: "smoothies", name: "Pineapple Smoothie", description: "Refreshing pineapple, tropical twist", price: 3000, emoji: "🍍" },
-
-  // Fresh Juices (50cl)
-  { id: "ju-orange", category: "juices", name: "Orange Juice", description: "50cl, freshly squeezed", price: 2000, emoji: "🍊" },
-  { id: "ju-pineapple", category: "juices", name: "Pineapple Juice", description: "50cl, pure & natural", price: 2000, emoji: "🍍" },
-  { id: "ju-watermelon", category: "juices", name: "Watermelon Juice", description: "50cl, chilled & refreshing", price: 2000, emoji: "🍉" },
-  { id: "ju-carrot", category: "juices", name: "Carrot Juice", description: "50cl, packed with goodness", price: 2500, emoji: "🥕" },
-  { id: "ju-mixed", category: "juices", name: "Mixed Fruit Juice", description: "50cl, a fruity blend", price: 2500, emoji: "🍹" },
-
-  // Milkshakes
-  { id: "mk-chocolate", category: "milkshakes", name: "Chocolate Milkshake", description: "Rich chocolate bliss", price: 3500, emoji: "🍫" },
-  { id: "mk-strawberry", category: "milkshakes", name: "Strawberry Milkshake", description: "Thick & fruity strawberry dream", price: 3500, emoji: "🍓" },
-  { id: "mk-vanilla", category: "milkshakes", name: "Vanilla Milkshake", description: "Classic vanilla delight", price: 3500, emoji: "🍦" },
-  { id: "mk-oreo", category: "milkshakes", name: "Oreo Milkshake", description: "Cookies & cream, extra thick", price: 4000, emoji: "🍪" },
-
+   // Smoothies
+  { id: "sm-banana", category: "smoothies", name: "Banana Smoothie", description: "Creamy banana, blended fresh", price: 2500, emoji: "🍌" },
+  { id: "sm-watermelon", category: "smoothies", name: "Watermelon Smoothie", description: "Cool, light & refreshing", price: 2000, emoji: "🍉" },
+  { id: "sm-mango", category: "smoothies", name: "Mango Smoothie", description: "Tropical mangoes for a smooth & creamy delight", price: 2500, emoji: "🥭" },
+  { id: "sm-pineapple", category: "smoothies", name: "Pineapple Smoothie", description: "Sweet & tangy tropical blend", price: 2500, emoji: "🍍" },
+  { id: "sm-mixed", category: "smoothies", name: "Mixed Fruit Smoothie", description: "A colourful blend of fresh fruits", price: 3000, emoji: "🍹" },
+  { id: "sm-strawberry", category: "smoothies", name: "Strawberry Smoothie", description: "Sweet, fresh strawberries", price: 3500, emoji: "🍓" },
+  
+  // Fresh juices
+  { id: "ju-watermelon", category: "juices", name: "Watermelon Juice", description: "Pure, chilled watermelon", price: 1500, emoji: "🍉" },
+  { id: "ju-pineapple", category: "juices", name: "Pineapple Juice", description: "Pure, natural, refreshing", price: 2000, emoji: "🍍" },
+  { id: "ju-orange", category: "juices", name: "Orange Juice", description: "Freshly squeezed oranges", price: 2000, emoji: "🍊" },
+  { id: "ju-apple", category: "juices", name: "Apple Juice", description: "Crisp, sweet apple", price: 2500, emoji: "🍎" },
+  { id: "ju-pineginger", category: "juices", name: "Pineapple & Ginger Juice", description: "Sweet pineapple with a ginger kick", price: 2000, emoji: "🍍" },
+  { id: "ju-mixed", category: "juices", name: "Mixed Fruit Juice", description: "A refreshing fruit mix", price: 2500, emoji: "🍹" },
+  { id: "ju-green", category: "juices", name: "Green Juice", description: "Fresh & wholesome greens", price: 2000, emoji: "🥬" },
+  { id: "ju-ginger", category: "juices", name: "Ginger Shot", description: "A fiery wellness kick", price: 1500, emoji: "🫚" },
+  
+   // Milkshakes
+  { id: "mk-vanilla", category: "milkshakes", name: "Vanilla Milkshake", description: "Creamy, thick, irresistible", price: 2500, emoji: "🍦" },
+  { id: "mk-chocolate", category: "milkshakes", name: "Chocolate Milkshake", description: "Rich chocolate bliss", price: 3000, emoji: "🍫" },
+  { id: "mk-strawberry", category: "milkshakes", name: "Strawberry Milkshake", description: "Strawberry dream", price: 3000, emoji: "🍓" },
+  { id: "mk-banana", category: "milkshakes", name: "Banana Milkshake", description: "Banana cream goodness", price: 2500, emoji: "🍌" },
+  { id: "mk-oreo", category: "milkshakes", name: "Oreo Milkshake", description: "Cookies & cream crunch", price: 3500, emoji: "🍪" },
+  
   // Snacks
-  { id: "sn-meatpie", category: "snacks", name: "Meat Pie", description: "Freshly baked, flaky pastry", price: 1000, emoji: "🥟" },
-  { id: "sn-sausageroll", category: "snacks", name: "Sausage Roll", description: "Golden and savory", price: 800, emoji: "🌭" },
-  { id: "sn-doughnut", category: "snacks", name: "Doughnut", description: "Soft & sweet", price: 700, emoji: "🍩" },
-  { id: "sn-popcorn", category: "snacks", name: "Popcorn", description: "Perfectly popped", price: 1000, emoji: "🍿" },
-  { id: "sn-fries", category: "snacks", name: "French Fries", description: "Crispy golden fries", price: 2000, emoji: "🍟" },
-     
-// New Menu Alert additions
-  { id: "ju-green", category: "juices", name: "Green Juice", description: "350ml, fresh & wholesome greens", price: 2500, emoji: "🥬" },
-  { id: "ju-ginger", category: "juices", name: "Ginger Shot", description: "60ml, a fiery wellness kick", price: 1500, emoji: "🫚" },
-  { id: "ju-zobo", category: "juices", name: "Zobo", description: "500ml, chilled hibiscus refresher", price: 1000, emoji: "🍷" },
-  { id: "mk-chocshake", category: "milkshakes", name: "Chocolate Shake", description: "500ml, rich & indulgent", price: 3500, emoji: "🍫" },
-  { id: "bw-parfait", category: "bowls", name: "Parfait", description: "Medium cup — granola, yogurt & berries", price: 3000, emoji: "🍓" },
-  { id: "bw-fruitsalad", category: "bowls", name: "Fruit Salad", description: "Medium bowl of fresh mixed fruit", price: 2500, emoji: "🍉" },
+  { id: "sn-doughnut", category: "snacks", name: "Doughnut", description: "Soft, sweet & freshly made", price: 1000, emoji: "🍩" },
+  { id: "sn-meatpie", category: "snacks", name: "Meatpie", description: "Flaky pastry, savoury filling", price: 1500, emoji: "🥧" },
+  { id: "sn-chickenpie", category: "snacks", name: "Chicken Pie", description: "Flaky pastry with chicken filling", price: 1500, emoji: "🥧" },
+  { id: "sn-sausageroll", category: "snacks", name: "Sausage Roll", description: "Golden pastry-wrapped sausage", price: 1500, emoji: "🌭" },
+  { id: "sn-fishroll", category: "snacks", name: "Fish Roll", description: "Flaky roll with fish filling", price: 1500, emoji: "🐟" },
+  
+   // Fresh bowls
+  { id: "bw-parfait", category: "bowls", name: "Parfait", description: "Granola, yogurt & berries", price: 3500, emoji: "🍓" },
+  { id: "bw-fruitsalad", category: "bowls", name: "Fruit Salad", description: "Fresh mixed fruit", price: 3000, emoji: "🍉" },
 
-  // Meals (no fixed price — see WhatsApp)
-  { id: "ml-daily", category: "meals", name: "Daily Meal Menu", description: "Delicious & satisfying meals, made fresh — check today's options on WhatsApp", price: null, emoji: "🍛" },
+  // Food menu
+  { id: "ml-friedrice-chicken", category: "meals", name: "Fried Rice & Chicken", description: "Fried rice served with chicken", price: 5000, emoji: "🍛" },
+  { id: "ml-jollof-chicken", category: "meals", name: "Jollof Rice & Chicken", description: "Smoky party jollof with chicken", price: 4500, emoji: "🍛" },
+  { id: "ml-friedrice-turkey", category: "meals", name: "Fried Rice & Turkey", description: "Fried rice served with turkey", price: 8500, emoji: "🍛" },
+  { id: "ml-jollof-turkey", category: "meals", name: "Jollof Rice & Turkey", description: "Smoky party jollof with turkey", price: 8000, emoji: "🍛" },
+  { id: "ml-native-chicken", category: "meals", name: "Native Rice & Chicken", description: "Rich native rice with chicken", price: 5500, emoji: "🍚" },
+  { id: "ml-white-stew-chicken", category: "meals", name: "White Rice, Stew & Chicken", description: "White rice, tomato stew and chicken", price: 4500, emoji: "🍚" },
+  { id: "ml-native-pasta-chicken", category: "meals", name: "Native Pasta & Chicken", description: "Native-style pasta with chicken", price: 4500, emoji: "🍝" },
+  { id: "ml-spag-chicken", category: "meals", name: "Stir Fried Spaghetti & Chicken", description: "Stir-fried spaghetti with chicken", price: 4000, emoji: "🍝" },
+  { id: "ml-spag-turkey", category: "meals", name: "Stir Fried Spaghetti & Turkey", description: "Stir-fried spaghetti with turkey", price: 7000, emoji: "🍝" },
+  { id: "ml-yam-fish", category: "meals", name: "Fried Yam & Fish Sauce", description: "Golden fried yam with fish sauce", price: 4500, emoji: "🍠" },
+  { id: "ml-potato-fish", category: "meals", name: "Fried Potato & Fish Sauce", description: "Fried potato with fish sauce", price: 4000, emoji: "🍟" },
+  { id: "ml-plantain", category: "meals", name: "Plantain", description: "Sweet fried plantain", price: 1500, emoji: "🍌" },
+  { id: "ml-coleslaw", category: "meals", name: "Coleslaw", description: "Fresh, creamy coleslaw", price: 1000, emoji: "🥗" },
+  
+  // Extras
+  { id: "ex-chicken", category: "extras", name: "Extra Chicken", description: "Add a piece of chicken", price: 2500, emoji: "🍗" },
+  { id: "ex-turkey", category: "extras", name: "Extra Turkey", description: "Add a piece of turkey", price: 4000, emoji: "🍗" },
+  { id: "ex-plantain", category: "extras", name: "Extra Plantain", description: "Add more plantain", price: 1500, emoji: "🍌" },
+  { id: "ex-coleslaw", category: "extras", name: "Extra Coleslaw", description: "Add more coleslaw", price: 1000, emoji: "🥗" },
+  { id: "ex-potato", category: "extras", name: "Fried Potato (Extra Portion)", description: "An extra portion of fried potato", price: 1000, emoji: "🍟" },
 ];
 
 export const BRAND = {
