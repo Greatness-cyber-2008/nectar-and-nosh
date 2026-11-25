@@ -35,7 +35,7 @@ export const CATEGORIES: CategoryInfo[] = [
 
 export const MENU_ITEMS: MenuItem[] = [
    // Smoothies
-  { id: "sm-banana", category: "smoothies", name: "Banana Smoothie", description: "Creamy banana, blended fresh", price: 2500, emoji: "🍌" },
+  { id: "sm-banana", category: "smoothies", name: "Banana Smoothie", description: "Creamy banana, blended fresh", price: 3000, emoji: "🍌" },
   { id: "sm-watermelon", category: "smoothies", name: "Watermelon Smoothie", description: "Cool, light & refreshing", price: 2000, emoji: "🍉" },
   { id: "sm-mango", category: "smoothies", name: "Mango Smoothie", description: "Tropical mangoes for a smooth & creamy delight", price: 2500, emoji: "🥭" },
   { id: "sm-pineapple", category: "smoothies", name: "Pineapple Smoothie", description: "Sweet & tangy tropical blend", price: 2500, emoji: "🍍" },

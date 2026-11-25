@@ -154,6 +154,7 @@ export default function CartPage() {
               >
                 <option value="Magodo">Magodo</option>
                 <option value="Isheri">Isheri</option>
+                <option value="OTHERS">OTHERS</option>
               </select>
               <textarea
                 placeholder="Full delivery address"
